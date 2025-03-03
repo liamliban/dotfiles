@@ -29,3 +29,9 @@ lspconfig.pyright.setup {
   capabilities = nvlsp.capabilities,
   filetypes = { "python" },
 }
+
+lspconfig.ruff.setup {
+  on_attach = nvlsp.on_attach,
+  capabilities = nvlsp.capabilities,
+  filetypes = { "python" },
+}

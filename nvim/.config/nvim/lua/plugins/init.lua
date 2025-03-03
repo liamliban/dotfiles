@@ -4,13 +4,15 @@ return {
     opts = {
       ensure_installed = {
         "pyright",
+        "ruff",
       },
+      automatic_installation = true,
     },
   },
 
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
@@ -18,6 +20,18 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+    end,
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+      "jayp0521/mason-null-ls.nvim",
+    },
+    ft = { "python" },
+    opts = function()
+      return require "configs.none-ls"
     end,
   },
 
@@ -34,9 +48,7 @@ return {
 
   {
     "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup {}
-    end,
+    opts = {},
   },
   {},
 
