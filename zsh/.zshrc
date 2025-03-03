@@ -175,7 +175,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias airflow="gcloud compute ssh airflow@airflow --project=fgi-data-warehouse --zone=asia-southeast1-a --tunnel-through-iap"
+alias airflow="gcloud compute ssh airflow@airflow --ssh-flag='-L 8080:localhost:8080' --project=fgi-data-warehouse --zone=asia-southeast1-a --tunnel-through-iap"
 
 auto_activate_venv() {
     if [ -z "$VIRTUAL_ENV" ] && [ -d ".venv" ]; then
@@ -199,7 +199,7 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-eval "$(starship init zsh)"
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+# eval "$(starship init zsh)"
