@@ -189,7 +189,7 @@ add-zsh-hook chpwd auto_activate_venv
 auto_activate_venv
 
 cd() {
-    builtin cd "$@" && ls --color=auto
+    builtin cd "$@" && eza --icons
 }
 
 # zsh autosuggestion
@@ -198,8 +198,10 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh autohighlight
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias ls='eza --icons'
 
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-# eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+alias cd='z'
+
+# Startship setup
+eval "$(starship init zsh)"
