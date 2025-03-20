@@ -167,6 +167,14 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh autohighlight
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+alias x='exit'
+alias c='clear'
+
+# TMUX ALIASES
+alias ta='tmux attach'
+alias td='tmux detach'
+alias t='tmux'
+
 alias ls='eza --icons'
 
 eval "$(zoxide init zsh)"
